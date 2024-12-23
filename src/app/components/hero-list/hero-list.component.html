@@ -1,0 +1,43 @@
+<div class="p-10 h-dvh">
+  <div>
+    <h1>Listado de Superhéroes</h1>
+  </div>
+
+  <div class="flex w-full mt-5 mb-3">
+    <input
+      class="flex-1 mr-2 rounded border border-gray-300 p-2"
+      type="text"
+      placeholder="Buscar héroe"
+      [(ngModel)]="searchTerm"
+      (input)="filterHeroes()"
+    />
+
+    <button (click)="addHero()">Añadir Héroe</button>
+  </div>
+  <hr class="mb-3" />
+
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4 mb-3"
+  >
+    <app-hero-card
+      *ngFor="let hero of paginatedHeroes"
+      [hero]="hero"
+      (delete)="deleteHero(hero.id)"
+    ></app-hero-card>
+  </div>
+  <hr class="mb-8" />
+
+  <div class="flex justify-center mt-4 gap-4 items-center">
+    <button [disabled]="currentPage === 1" (click)="prevPage()" class="w-32">
+      Anterior
+    </button>
+    <span>Página {{ currentPage }}</span>
+    <button
+      [disabled]="currentPage === totalPages"
+      (click)="nextPage()"
+      class="w-32"
+    >
+      Siguiente
+    </button>
+  </div>
+</div>

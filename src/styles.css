@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-text text-3xl  mb-4;
+  }
+
+  a {
+    @apply text-secondary hover:underline;
+  }
+
+  button {
+    @apply bg-primary text-text py-2 px-4 rounded;
+  }
+
+  button:hover {
+    @apply bg-secondary;
+  }
+
+  button:disabled {
+    @apply opacity-50 cursor-not-allowed;
+  }
+
+  button:disabled:hover {
+    @apply bg-primary;
+  }
+}

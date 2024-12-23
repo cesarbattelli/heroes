@@ -3,4 +3,5 @@ export interface SuperHero {
   name: string;
   description: string;
   powers: string[];
+  avatar: string;
 }

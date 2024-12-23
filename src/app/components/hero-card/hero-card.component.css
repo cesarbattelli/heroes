@@ -1,0 +1,12 @@
+.hero-card {
+  max-width: 400px;
+  margin: 16px;
+}
+
+.user-avatar {
+  background-size: cover;
+}
+
+mat-chip-list {
+  margin-top: 16px;
+}
