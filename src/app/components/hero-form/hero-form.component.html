@@ -8,6 +8,7 @@
         formControlName="name"
         class="w-full border rounded px-3 py-2"
         placeholder="Nombre del héroe"
+        appUppercaseInput
       />
       <div
         *ngIf="heroForm.get('name')?.invalid && heroForm.get('name')?.touched"

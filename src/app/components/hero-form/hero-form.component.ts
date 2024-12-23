@@ -6,10 +6,11 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { UppercaseInputDirective } from '../../directives/uppercase-input.directive';
 
 @Component({
   selector: 'app-hero-form',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, UppercaseInputDirective],
   templateUrl: './hero-form.component.html',
   styleUrls: ['./hero-form.component.css'],
 })
