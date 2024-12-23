@@ -1,0 +1,22 @@
+{
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Spiderman",
+      "description": "Superhéroe arácnido",
+      "powers": ["trepar paredes", "sentido arácnido"]
+    },
+    {
+      "id": 2,
+      "name": "Superman",
+      "description": "Hombre de acero",
+      "powers": ["fuerza", "vuelo"]
+    },
+    {
+      "id": 3,
+      "name": "Batman",
+      "description": "Detective oscuro",
+      "powers": ["inteligencia", "artes marciales"]
+    }
+  ]
+}
