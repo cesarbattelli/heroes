@@ -5,10 +5,17 @@ import { SuperHeroService } from '../../services/super-hero.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeroCardComponent } from '../hero-card/hero-card.component';
+import { HeroFormComponent } from '../hero-form/hero-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, FormsModule, HeroCardComponent],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    FormsModule,
+    HeroCardComponent,
+    HeroFormComponent,
+  ],
   templateUrl: './hero-list.component.html',
   styleUrl: './hero-list.component.css',
 })
@@ -22,6 +29,8 @@ export class HeroListComponent {
   currentPage = 1;
   itemsPerPage = 8;
   totalPages = 0;
+
+  editingHero: any | null = null;
 
   ngOnInit(): void {
     this.loadHeroes();
@@ -64,14 +73,38 @@ export class HeroListComponent {
     }
   }
 
-  addHero(): void {
-    console.log('Añadir héroe');
-  }
-
   deleteHero(heroId: number): void {
     this.heroService.deleteHero(heroId).subscribe(() => {
       this.heroes.set(this.heroes().filter((hero) => hero.id !== heroId));
       this.loadHeroes();
     });
+  }
+
+  onAddHero(): void {
+    this.editingHero = null;
+    this.editingHero = {
+      id: null,
+      name: '',
+      description: '',
+      powers: [],
+      avatar: '',
+    };
+  }
+
+  onEditHero(hero: any): void {
+    this.editingHero = hero;
+  }
+
+  saveHero(hero: any): void {
+    if (hero.id) {
+      this.heroService.updateHero(hero).subscribe(() => this.loadHeroes());
+    } else {
+      this.heroService.addHero(hero).subscribe(() => this.loadHeroes());
+    }
+    this.editingHero = null;
+  }
+
+  cancelEdit(): void {
+    this.editingHero = null;
   }
 }

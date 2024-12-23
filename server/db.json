@@ -1,95 +1,81 @@
 {
   "heroes": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Spiderman",
       "description": "Superhéroe arácnido",
       "powers": ["trepar paredes", "sentido arácnido"],
-      "avatar": "https://api.multiavatar.com/Spiderman.png"
+      "avatar": "https://robohash.org/Spiderman"
     },
     {
-      "id": 2,
-      "name": "Superman",
+      "id": "2",
+      "name": "Superman1",
       "description": "Hombre de acero",
-      "powers": ["fuerza", "vuelo"],
-      "avatar": "https://api.multiavatar.com/Superman.png"
+      "powers": ["fuerza", "vuelo", "hola"],
+      "avatar": "https://robohash.org/Superman.png"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Batman",
       "description": "Detective oscuro",
       "powers": ["inteligencia", "artes marciales"],
-      "avatar": "https://api.multiavatar.com/Batman.png"
+      "avatar": "https://robohash.org/Batman.png"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "WonderWoman",
       "description": "Guerrera amazona",
       "powers": ["superfuerza", "lazo mágico"],
-      "avatar": "https://api.multiavatar.com/WonderWoman.png"
+      "avatar": "https://robohash.org/WonderWoman.png"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Ironman",
       "description": "Genio millonario",
       "powers": ["tecnología avanzada", "trajes armados"],
-      "avatar": "https://api.multiavatar.com/Ironman.png"
+      "avatar": "https://robohash.org/Ironman.png"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Thor",
       "description": "Dios del trueno",
       "powers": ["control del trueno", "fuerza divina"],
-      "avatar": "https://api.multiavatar.com/Thor.png"
+      "avatar": "https://robohash.org/Thor.png"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Hulk",
       "description": "Gigante verde",
       "powers": ["fuerza sobrehumana", "resistencia extrema"],
-      "avatar": "https://api.multiavatar.com/Hulk.png"
+      "avatar": "https://robohash.org/Hulk.png"
     },
     {
-      "id": 8,
-      "name": "Flash",
-      "description": "El hombre más rápido del mundo",
-      "powers": ["supervelocidad", "viajes en el tiempo"],
-      "avatar": "https://api.multiavatar.com/Flash.png"
-    },
-    {
-      "id": 9,
+      "id": "9",
       "name": "Aquaman",
       "description": "Rey de Atlantis",
       "powers": ["agua", "comunicación"],
-      "avatar": "https://api.multiavatar.com/Aquaman.png"
+      "avatar": "https://robohash.org/Aquaman.png"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "GreenLantern",
       "description": "Portador del anillo de poder",
       "powers": ["creación", "volar"],
-      "avatar": "https://api.multiavatar.com/GreenLantern.png"
+      "avatar": "https://robohash.org/GreenLantern.png"
     },
     {
-      "id": 11,
-      "name": "BlackWidow",
-      "description": "Espía experta",
-      "powers": ["combate", "estrategia táctica"],
-      "avatar": "https://api.multiavatar.com/BlackWidow.png"
-    },
-    {
-      "id": 12,
+      "id": "12",
       "name": "DoctorStrange",
       "description": "Hechicero supremo",
       "powers": ["magia", "control del tiempo"],
-      "avatar": "https://api.multiavatar.com/DoctorStrange.png"
+      "avatar": "https://robohash.org/DoctorStrange.png"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "CaptainAmerica",
       "description": "Super soldado",
       "powers": ["fuerza mejorada", "escudo"],
-      "avatar": "https://api.multiavatar.com/CaptainAmerica.png"
+      "avatar": "https://robohash.org/CaptainAmerica.png"
     }
   ]
 }

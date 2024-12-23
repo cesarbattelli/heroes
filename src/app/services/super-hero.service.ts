@@ -20,6 +20,8 @@ export class SuperHeroService {
   }
 
   addHero(hero: SuperHero): Observable<SuperHero> {
+    hero.id = new Date().getTime();
+    hero.avatar = 'https://robohash.org/' + hero.name;
     return this.http.post<SuperHero>(this.apiUrl, hero);
   }
 

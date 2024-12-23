@@ -22,9 +22,10 @@ export class HeroCardComponent {
   };
 
   @Output() delete = new EventEmitter<void>();
+  @Output() edit = new EventEmitter<void>();
 
   editHero(): void {
-    console.log('Editar héroe:', this.hero);
+    this.edit.emit();
   }
 
   deleteHero(): void {

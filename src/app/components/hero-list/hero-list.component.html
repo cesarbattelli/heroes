@@ -12,7 +12,7 @@
       (input)="filterHeroes()"
     />
 
-    <button (click)="addHero()">Añadir Héroe</button>
+    <button (click)="onAddHero()">Añadir Héroe</button>
   </div>
   <hr class="mb-3" />
 
@@ -23,6 +23,7 @@
       *ngFor="let hero of paginatedHeroes"
       [hero]="hero"
       (delete)="deleteHero(hero.id)"
+      (edit)="onEditHero(hero)"
     ></app-hero-card>
   </div>
   <hr class="mb-8" />
@@ -39,5 +40,25 @@
     >
       Siguiente
     </button>
+  </div>
+
+  <div
+    *ngIf="editingHero !== null"
+    class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm z-50"
+  >
+    <div class="relative bg-white rounded-lg p-6 w-full max-w-lg">
+      <button
+        (click)="cancelEdit()"
+        class="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+        aria-label="Cerrar"
+      >
+        ✖
+      </button>
+      <app-hero-form
+        [hero]="editingHero"
+        (saveHero)="saveHero($event)"
+        (cancel)="cancelEdit()"
+      ></app-hero-form>
+    </div>
   </div>
 </div>
