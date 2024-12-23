@@ -34,12 +34,14 @@ describe('SuperHeroService', () => {
         name: 'Spiderman',
         description: 'Superhéroe arácnido',
         powers: ['trepar paredes'],
+        avatar: 'https://robohash.org/Spiderman',
       },
       {
         id: 2,
         name: 'Batman',
         description: 'Detective oscuro',
         powers: ['inteligencia'],
+        avatar: 'https://robohash.org/Batman.png',
       },
     ];
 
@@ -59,6 +61,7 @@ describe('SuperHeroService', () => {
       name: 'Spiderman',
       description: 'Superhéroe arácnido',
       powers: ['trepar paredes'],
+      avatar: 'https://robohash.org/Spiderman',
     };
 
     service.getHeroById(1).subscribe((hero: SuperHero) => {
@@ -76,6 +79,7 @@ describe('SuperHeroService', () => {
       name: 'Ironman',
       description: 'Genio millonario',
       powers: ['tecnología'],
+      avatar: 'https://robohash.org/Ironman.png',
     };
 
     service.addHero(newHero).subscribe((hero: SuperHero) => {
@@ -93,6 +97,7 @@ describe('SuperHeroService', () => {
       name: 'Spiderman',
       description: 'Actualizado',
       powers: ['trepar paredes'],
+      avatar: 'https://robohash.org/Spiderman',
     };
 
     service.updateHero(updatedHero).subscribe((hero: SuperHero) => {
