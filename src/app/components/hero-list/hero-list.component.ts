@@ -1,5 +1,4 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { SuperHero } from '../../models/super-hero.model';
 import { SuperHeroService } from '../../services/super-hero.service';
 import { CommonModule } from '@angular/common';
@@ -9,13 +8,7 @@ import { HeroFormComponent } from '../hero-form/hero-form.component';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    CommonModule,
-    FormsModule,
-    HeroCardComponent,
-    HeroFormComponent,
-  ],
+  imports: [CommonModule, FormsModule, HeroCardComponent, HeroFormComponent],
   templateUrl: './hero-list.component.html',
   styleUrl: './hero-list.component.css',
 })
