@@ -1,15 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router, RouterModule } from '@angular/router';
 import { SuperHero } from '../../models/super-hero.model';
 import { SuperHeroService } from '../../services/super-hero.service';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { HeroCardComponent } from '../hero-card/hero-card.component';
-import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule, CommonModule, FormsModule, HeroCardComponent],
+  imports: [RouterModule, FormsModule, HeroCardComponent],
   templateUrl: './hero-list.component.html',
   styleUrl: './hero-list.component.css',
 })

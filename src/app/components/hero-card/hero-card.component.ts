@@ -1,5 +1,5 @@
-import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { SuperHero } from '../../models/super-hero.model';
 
 @Component({

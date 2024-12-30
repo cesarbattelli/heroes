@@ -7,9 +7,9 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SuperHeroService } from '../../services/super-hero.service';
 import { UppercaseInputDirective } from '../../directives/uppercase-input.directive';
 import { SuperHero } from '../../models/super-hero.model';
+import { SuperHeroService } from '../../services/super-hero.service';
 
 @Component({
   selector: 'app-hero-form',
