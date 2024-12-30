@@ -1,7 +1,6 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SuperHero } from '../../models/super-hero.model';
-import { SuperHeroService } from '../../services/super-hero.service';
 
 @Component({
   selector: 'app-hero-card',
@@ -11,8 +10,6 @@ import { SuperHeroService } from '../../services/super-hero.service';
   styleUrls: ['./hero-card.component.css'],
 })
 export class HeroCardComponent {
-  private heroService = inject(SuperHeroService);
-
   @Input() hero: SuperHero = {
     id: '',
     name: '',

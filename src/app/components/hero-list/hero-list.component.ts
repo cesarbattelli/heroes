@@ -4,11 +4,12 @@ import { SuperHeroService } from '../../services/super-hero.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeroCardComponent } from '../hero-card/hero-card.component';
-import { HeroFormComponent } from '../hero-form/hero-form.component';
+import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, FormsModule, HeroCardComponent, HeroFormComponent],
+  imports: [RouterModule, CommonModule, FormsModule, HeroCardComponent],
   templateUrl: './hero-list.component.html',
   styleUrl: './hero-list.component.css',
 })
@@ -24,6 +25,8 @@ export class HeroListComponent {
   totalPages = 0;
 
   editingHero: any | null = null;
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.loadHeroes();
@@ -73,31 +76,7 @@ export class HeroListComponent {
     });
   }
 
-  onAddHero(): void {
-    this.editingHero = null;
-    this.editingHero = {
-      id: null,
-      name: '',
-      description: '',
-      powers: [],
-      avatar: '',
-    };
-  }
-
   onEditHero(hero: any): void {
-    this.editingHero = hero;
-  }
-
-  saveHero(hero: any): void {
-    if (hero.id) {
-      this.heroService.updateHero(hero).subscribe(() => this.loadHeroes());
-    } else {
-      this.heroService.addHero(hero).subscribe(() => this.loadHeroes());
-    }
-    this.editingHero = null;
-  }
-
-  cancelEdit(): void {
-    this.editingHero = null;
+    this.router.navigate(['/hero/edit', hero.id]);
   }
 }

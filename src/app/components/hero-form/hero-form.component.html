@@ -1,78 +1,78 @@
-<div class="p-4 bg-white rounded mx-auto">
-  <form [formGroup]="heroForm" (ngSubmit)="onSubmit()">
-    <div class="mb-4">
-      <label for="name" class="block text-gray-700 font-bold">Nombre</label>
-      <input
-        id="name"
-        type="text"
-        formControlName="name"
-        class="w-full border rounded px-3 py-2"
-        placeholder="Nombre del héroe"
-        appUppercaseInput
-      />
-      <div
-        *ngIf="heroForm.get('name')?.invalid && heroForm.get('name')?.touched"
-        class="text-red-500 text-sm"
-      >
-        El nombre es requerido y no debe exceder 50 caracteres.
-      </div>
-    </div>
+<div class="flex flex-col justify-center items-center h-screen">
+  <h2>{{ isEditing ? 'Editar Héroe' : 'Añadir Héroe' }}</h2>
 
-    <div class="mb-4">
-      <label for="description" class="block text-gray-700 font-bold"
-        >Descripción</label
-      >
-      <textarea
-        id="description"
-        formControlName="description"
-        class="w-full border rounded px-3 py-2"
-        placeholder="Descripción del héroe"
-      ></textarea>
-      <div
-        *ngIf="
-          heroForm.get('description')?.invalid &&
-          heroForm.get('description')?.touched
-        "
-        class="text-red-500 text-sm"
-      >
-        La descripción es requerida y no debe exceder 200 caracteres.
+  <div class="p-6 bg-white rounded shadow-md w-[500px]">
+    <form [formGroup]="heroForm" (ngSubmit)="onSubmit()">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-700 font-bold">Nombre</label>
+        <input
+          id="name"
+          formControlName="name"
+          class="w-full border p-2"
+          placeholder="Nombre del héroe"
+          appUppercaseInput
+        />
+        <small
+          *ngIf="heroForm.get('name')?.invalid && heroForm.get('name')?.touched"
+          class="text-red-500"
+        >
+          El nombre es requerido y no debe exceder 50 caracteres.
+        </small>
       </div>
-    </div>
 
-    <div class="mb-4">
-      <label for="powers" class="block text-gray-700 font-bold">Poderes</label>
-      <input
-        id="powers"
-        type="text"
-        formControlName="powers"
-        class="w-full border rounded px-3 py-2"
-        placeholder="Lista de poderes separados por coma"
-      />
-      <div
-        *ngIf="
-          heroForm.get('powers')?.invalid && heroForm.get('powers')?.touched
-        "
-        class="text-red-500 text-sm"
-      >
-        Al menos un poder es requerido.
+      <div class="mb-4">
+        <label for="description" class="block text-gray-700 font-bold"
+          >Descripción</label
+        >
+        <textarea
+          id="description"
+          formControlName="description"
+          class="w-full border p-2"
+          placeholder="Descripción del héroe"
+        ></textarea>
+        <small
+          *ngIf="
+            heroForm.get('description')?.invalid &&
+            heroForm.get('description')?.touched
+          "
+          class="text-red-500"
+        >
+          La descripción es requerida y no debe exceder 200 caracteres.
+        </small>
       </div>
-    </div>
 
-    <div class="flex justify-end gap-2">
-      <button
-        type="button"
-        (click)="onCancel()"
-        class="px-4 py-2 bg-gray-500 text-white rounded"
-      >
-        Cancelar
-      </button>
-      <button
-        type="submit"
-        [disabled]="heroForm.invalid"
-        class="px-4 py-2 bg-blue-500 text-white rounded"
-      >
-        Guardar
-      </button>
-    </div>
-  </form>
+      <div class="mb-4">
+        <label for="powers" class="block text-gray-700 font-bold"
+          >Poderes</label
+        >
+        <input
+          id="powers"
+          formControlName="powers"
+          class="w-full border p-2"
+          placeholder="Poderes del héroe separados por comas"
+        />
+        <small
+          *ngIf="
+            heroForm.get('powers')?.invalid && heroForm.get('powers')?.touched
+          "
+          class="text-red-500"
+        >
+          Los poderes son requeridos.
+        </small>
+      </div>
+
+      <div class="flex justify-end mt-4">
+        <button
+          type="button"
+          (click)="onCancel()"
+          class="mr-2 px-4 py-2 rounded"
+        >
+          Cancelar
+        </button>
+        <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded">
+          {{ isEditing ? 'Guardar Cambios' : 'Crear Héroe' }}
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
