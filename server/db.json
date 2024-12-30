@@ -1,17 +1,7 @@
 {
   "heroes": [
     {
-      "id": "1735561009171",
-      "name": "Spiderman",
-      "description": "Superhéroe arácnido",
-      "powers": [
-        "trepar paredes",
-        "sentido arácnido"
-      ],
-      "avatar": "https://robohash.org/Spiderman"
-    },
-    {
-      "id": "1735561009172",
+      "id": "2",
       "name": "Superman1",
       "description": "Hombre de acero",
       "powers": [
@@ -22,7 +12,7 @@
       "avatar": "https://robohash.org/Superman.png"
     },
     {
-      "id": "1735561009173",
+      "id": "3",
       "name": "Batman",
       "description": "Detective oscuro",
       "powers": [
@@ -32,7 +22,7 @@
       "avatar": "https://robohash.org/Batman.png"
     },
     {
-      "id": "1735561009174",
+      "id": "4",
       "name": "WonderWoman",
       "description": "Guerrera amazona",
       "powers": [
@@ -42,7 +32,7 @@
       "avatar": "https://robohash.org/WonderWoman.png"
     },
     {
-      "id": "1735561009175",
+      "id": "5",
       "name": "Ironman",
       "description": "Genio millonario",
       "powers": [
@@ -52,7 +42,7 @@
       "avatar": "https://robohash.org/Ironman.png"
     },
     {
-      "id": "1735561009176",
+      "id": "6",
       "name": "Thor",
       "description": "Dios del trueno",
       "powers": [
@@ -62,7 +52,7 @@
       "avatar": "https://robohash.org/Thor.png"
     },
     {
-      "id": "1735561009177",
+      "id": "7",
       "name": "Hulk",
       "description": "Gigante verde",
       "powers": [
@@ -72,7 +62,17 @@
       "avatar": "https://robohash.org/Hulk.png"
     },
     {
-      "id": "1735561009179",
+      "id": "9",
+      "name": "Aquaman",
+      "description": "Rey de Atlantis",
+      "powers": [
+        "agua",
+        "comunicación"
+      ],
+      "avatar": "https://robohash.org/Aquaman.png"
+    },
+    {
+      "id": "10",
       "name": "GreenLantern",
       "description": "Portador del anillo de poder",
       "powers": [
@@ -82,7 +82,7 @@
       "avatar": "https://robohash.org/GreenLantern.png"
     },
     {
-      "id": "1735561009180",
+      "id": "12",
       "name": "DoctorStrange",
       "description": "Hechicero supremo",
       "powers": [
@@ -92,7 +92,7 @@
       "avatar": "https://robohash.org/DoctorStrange.png"
     },
     {
-      "id": "1735561009181",
+      "id": "13",
       "name": "CaptainAmerica",
       "description": "Super soldado",
       "powers": [
@@ -100,6 +100,24 @@
         "escudo"
       ],
       "avatar": "https://robohash.org/CaptainAmerica.png"
+    },
+    {
+      "id": "1735561826989",
+      "name": "Ironman",
+      "description": "Genio millonario",
+      "powers": [
+        "tecnología"
+      ],
+      "avatar": "https://robohash.org/Ironman"
+    },
+    {
+      "id": "1735561970888",
+      "name": "Ironman",
+      "description": "Genio millonario",
+      "powers": [
+        "tecnología"
+      ],
+      "avatar": "https://robohash.org/Ironman"
     }
   ]
 }

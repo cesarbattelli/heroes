@@ -1,10 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import {
-  HttpClientTestingModule,
   HttpTestingController,
+  provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { SuperHeroService } from './super-hero.service';
 import { SuperHero } from '../models/super-hero.model';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('SuperHeroService', () => {
   let service: SuperHeroService;
@@ -12,8 +13,11 @@ describe('SuperHeroService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-      providers: [SuperHeroService],
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        SuperHeroService,
+      ],
     });
     service = TestBed.inject(SuperHeroService);
     httpMock = TestBed.inject(HttpTestingController);
@@ -30,14 +34,14 @@ describe('SuperHeroService', () => {
   it('should retrieve all heroes (GET)', () => {
     const mockHeroes: SuperHero[] = [
       {
-        id: 1,
+        id: '1',
         name: 'Spiderman',
         description: 'Superhéroe arácnido',
         powers: ['trepar paredes'],
         avatar: 'https://robohash.org/Spiderman',
       },
       {
-        id: 2,
+        id: '2',
         name: 'Batman',
         description: 'Detective oscuro',
         powers: ['inteligencia'],
@@ -57,14 +61,14 @@ describe('SuperHeroService', () => {
 
   it('should retrieve a hero by id (GET)', () => {
     const mockHero: SuperHero = {
-      id: 1,
+      id: '1',
       name: 'Spiderman',
       description: 'Superhéroe arácnido',
       powers: ['trepar paredes'],
       avatar: 'https://robohash.org/Spiderman',
     };
 
-    service.getHeroById(1).subscribe((hero: SuperHero) => {
+    service.getHeroById('1').subscribe((hero: SuperHero) => {
       expect(hero).toEqual(mockHero);
     });
 
@@ -75,7 +79,7 @@ describe('SuperHeroService', () => {
 
   it('should add a new hero (POST)', () => {
     const newHero: SuperHero = {
-      id: 4,
+      id: '4',
       name: 'Ironman',
       description: 'Genio millonario',
       powers: ['tecnología'],
@@ -93,7 +97,7 @@ describe('SuperHeroService', () => {
 
   it('should update a hero (PUT)', () => {
     const updatedHero: SuperHero = {
-      id: 1,
+      id: '1',
       name: 'Spiderman',
       description: 'Actualizado',
       powers: ['trepar paredes'],
@@ -110,7 +114,7 @@ describe('SuperHeroService', () => {
   });
 
   it('should delete a hero (DELETE)', () => {
-    const heroId = 1;
+    const heroId = '1';
 
     service.deleteHero(heroId).subscribe((response) => {
       expect(response).toBeNull();

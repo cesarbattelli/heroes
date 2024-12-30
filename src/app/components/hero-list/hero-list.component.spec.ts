@@ -1,12 +1,11 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { HeroListComponent } from './hero-list.component';
 import { SuperHeroService } from '../../services/super-hero.service';
-import { HeroCardComponent } from '../hero-card/hero-card.component';
-import { HeroFormComponent } from '../hero-form/hero-form.component';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
 import { SuperHero } from '../../models/super-hero.model';
+import { provideHttpClient } from '@angular/common/http';
 
 describe('HeroListComponent', () => {
   let component: HeroListComponent;
@@ -15,14 +14,14 @@ describe('HeroListComponent', () => {
 
   const mockHeroes: SuperHero[] = [
     {
-      id: 1,
+      id: '1',
       name: 'Superman',
       description: 'Man of Steel',
       powers: ['Fly'],
       avatar: 'superman.jpg',
     },
     {
-      id: 2,
+      id: '2',
       name: 'Batman',
       description: 'Dark Knight',
       powers: ['Detective'],
@@ -39,8 +38,12 @@ describe('HeroListComponent', () => {
     ]);
 
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, FormsModule, HeroListComponent], // HeroListComponent va aquí
-      providers: [{ provide: SuperHeroService, useValue: heroServiceSpy }],
+      imports: [FormsModule, HeroListComponent], // HeroListComponent va aquí
+      providers: [
+        provideHttpClient(),
+        provideHttpClientTesting(),
+        { provide: SuperHeroService, useValue: heroServiceSpy },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HeroListComponent);
@@ -72,7 +75,7 @@ describe('HeroListComponent', () => {
 
     expect(component.filteredHeroes).toEqual([
       {
-        id: 1,
+        id: '1',
         name: 'Superman',
         description: 'Man of Steel',
         powers: ['Fly'],
