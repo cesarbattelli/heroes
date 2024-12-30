@@ -1,5 +1,5 @@
 export interface SuperHero {
-  id: number;
+  id: string;
   name: string;
   description: string;
   powers: string[];

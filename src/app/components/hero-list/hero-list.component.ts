@@ -66,7 +66,7 @@ export class HeroListComponent {
     }
   }
 
-  deleteHero(heroId: number): void {
+  deleteHero(heroId: string): void {
     this.heroService.deleteHero(heroId).subscribe(() => {
       this.heroes.set(this.heroes().filter((hero) => hero.id !== heroId));
       this.loadHeroes();

@@ -15,12 +15,12 @@ export class SuperHeroService {
     return this.http.get<SuperHero[]>(this.apiUrl);
   }
 
-  getHeroById(id: number): Observable<SuperHero> {
+  getHeroById(id: string): Observable<SuperHero> {
     return this.http.get<SuperHero>(`${this.apiUrl}/${id}`);
   }
 
   addHero(hero: SuperHero): Observable<SuperHero> {
-    hero.id = new Date().getTime();
+    hero.id = new Date().getTime().toString();
     hero.avatar = 'https://robohash.org/' + hero.name;
     return this.http.post<SuperHero>(this.apiUrl, hero);
   }
@@ -29,7 +29,7 @@ export class SuperHeroService {
     return this.http.put<SuperHero>(`${this.apiUrl}/${hero.id}`, hero);
   }
 
-  deleteHero(id: number): Observable<void> {
+  deleteHero(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

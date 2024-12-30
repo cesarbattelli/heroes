@@ -14,7 +14,7 @@ export class HeroCardComponent {
   private heroService = inject(SuperHeroService);
 
   @Input() hero: SuperHero = {
-    id: 0,
+    id: '',
     name: '',
     description: '',
     powers: [],
