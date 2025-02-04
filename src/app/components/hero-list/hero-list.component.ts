@@ -4,10 +4,11 @@ import { Router, RouterModule } from '@angular/router';
 import { SuperHero } from '../../models/super-hero.model';
 import { SuperHeroService } from '../../services/super-hero.service';
 import { HeroCardComponent } from '../hero-card/hero-card.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterModule, FormsModule, HeroCardComponent],
+  imports: [RouterModule, CommonModule, FormsModule, HeroCardComponent],
   templateUrl: './hero-list.component.html',
   styleUrl: './hero-list.component.css',
 })
