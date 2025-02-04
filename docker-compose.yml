@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  json-server:
+    build: ./server
+    ports:
+      - '3000:3000'
+    networks:
+      - app-network
+
+  frontend:
+    build: .
+    ports:
+      - '80:80'
+    depends_on:
+      - json-server
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
